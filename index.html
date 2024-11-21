@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms and Service</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap");
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #242836;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #333541;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        width: 100%;
+        min-height: 100%;
+        background-color: #242836;
+      }
+
+      .main-header {
+        width: 100%;
+        height: 75px;
+        background-color: #181a24;
+        display: block;
+      }
+
+      .main-header ul.header-options {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-right: 100px;
+      }
+
+      .main-header ul.header-options li {
+        display: inline-block;
+      }
+
+      .main-header ul.header-options li.title {
+        font-size: 18px;
+        color: #fff;
+        font-family: Arial;
+        cursor: pointer;
+      }
+
+      .header-mobile {
+        width: 100%;
+        height: 75px;
+        background-color: #181a24;
+        text-align: center;
+        display: none;
+      }
+
+      .title-mobile {
+        font-size: 18px;
+        color: #fff;
+        font-family: Arial;
+        cursor: pointer;
+        padding-top: 30px;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #6d6f79;
+        font-family: Arial;
+        cursor: pointer;
+      }
+
+      a:hover {
+        font-size: 16px;
+        color: #9598a7;
+      }
+
+      .card {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height: 5850px;
+        width: 1200px;
+        border-radius: 30px;
+        background-color: #333541;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .card .primary-heading {
+        text-align: center;
+        font-family: josefin sans;
+        color: white;
+        padding-top: 50px;
+        font-size: 4em;
+      }
+
+      .paragraph {
+        font-family: josefin sans;
+        color: rgb(179, 179, 179);
+        margin-left: 50px;
+        margin-right: 25px;
+        padding-top: 50px;
+        font-size: 1.5em;
+        line-height: 1.3em;
+        font-weight: 500;
+      }
+
+      .bold {
+        font-weight: 700;
+        color: white;
+      }
+
+      .footer-heading {
+        text-align: center;
+        font-family: josefin sans;
+        color: white;
+        margin-bottom: 50px;
+        font-size: 2em;
+        line-height: 35px;
+      }
+
+      @media only screen and (max-width: 1218px) {
+        .card {
+          margin-top: 100px;
+          margin-bottom: 100px;
+          height: 2050px;
+          width: 1000px;
+          border-radius: 30px;
+          background-color: #333541;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media only screen and (max-width: 1012px) {
+        .card {
+          margin-top: 100px;
+          margin-bottom: 100px;
+          height: 2350px;
+          width: 800px;
+          border-radius: 30px;
+          background-color: #333541;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media only screen and (max-width: 832px) {
+        .card {
+          margin-top: 100px;
+          margin-bottom: 100px;
+          height: 2950px;
+          width: 600px;
+          border-radius: 30px;
+          background-color: #333541;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .card .primary-heading {
+          font-size: 3.5em;
+        }
+
+        .footer-heading {
+          font-size: 1.5em;
+        }
+      }
+
+      @media only screen and (max-width: 626px) {
+        .card {
+          margin-top: 100px;
+          margin-bottom: 100px;
+          height: 3850px;
+          width: 450px;
+          border-radius: 30px;
+          background-color: #333541;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .header-mobile {
+          display: block;
+        }
+
+        .main-header {
+          display: none;
+        }
+
+        .card .primary-heading {
+          font-size: 3em;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .card {
+          margin-top: 100px;
+          margin-bottom: 100px;
+          height: 5050px;
+          width: 350px;
+          border-radius: 30px;
+          background-color: #333541;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .card .primary-heading {
+          font-size: 2em;
+        }
+      }
+
+      @media only screen and (max-width: 365px) {
+        .card {
+          margin-top: 100px;
+          margin-bottom: 100px;
+          height: 6300px;
+          width: 290px;
+          border-radius: 30px;
+          background-color: #333541;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .card .primary-heading {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header dark-theme">
+      <ul class="header-options">
+        <li class="title">VBLAZE GLOBAL</li>
+        <li class="option"><a href="https://api.vblaze.org"> API </a></li>
+        <li class="option">
+          <a href=""> DOCS </a>
+        </li>
+        <li class="option">
+          <a href="https://github.com/VBLAZE-GLOBAL/"> GITHUB </a>
+        </li>
+        <li class="option">
+          <a href="https://discord.gg/"> DISCORD </a>
+        </li>
+      </ul>
+    </header>
+
+    <header class="header-mobile dark-theme">
+      <h3 class="title-mobile">VBLAZE GLOBAL</h3>
+    </header>
+
+    <section id="terms-of-service">
+      <div class="card">
+
+        <h1 class="primary-heading">Terms of Service</h1>
+        <p class="paragraph">
+          Welcome to VBLAZE. By accessing or using our website or services, you
+          agree to comply with and be bound by the following terms and
+          conditions. These terms govern your use of all services offered by
+          VBLAZE, including consulting, development, marketing, and specialized
+          digital solutions. Please read these terms carefully, as they
+          constitute a legally binding agreement.
+        </p>
+        <hr />
+        <h2 class="paragraph"><strong>Introduction</strong></h2>
+        <p class="paragraph">
+          VBLAZE is a full-service company specializing in Artificial
+          Intelligence solutions, Website Development, App Development, Digital
+          Marketing, and more. Our goal is to empower businesses with
+          cutting-edge technologies, expert advice, and tailored strategies. By
+          using our services, you agree to the following terms and conditions.
+        </p class="paragraph">
+        <h3 class="paragraph"><strong>Key Definitions</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Company</strong>: VBLAZE, including all its subsidiaries and
+            affiliates.
+          </li>
+          <li>
+            <strong>Client</strong>: Any individual or business engaging with
+            VBLAZE for services.
+          </li>
+          <li>
+            <strong>Services</strong>: All offerings, including AI solutions,
+            web and app development, digital marketing, and consulting.
+          </li>
+          <li>
+            <strong>Confidential Information</strong>: Any non-public data,
+            insights, or strategies shared between VBLAZE and the Client.
+          </li>
+        </ol>
+        <hr />
+        <h2 class="paragraph"><strong>Artificial Intelligence and Related Services</strong></h2>
+        <p class="paragraph">
+          At VBLAZE, we offer advanced Artificial Intelligence solutions to help
+          businesses optimize operations and make informed decisions. This
+          includes:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Artificial Intelligence</strong>: Customized AI solutions to
+            automate and streamline your processes.
+          </li>
+          <li>
+            <strong>Machine Learning</strong>: Predictive analytics and
+            data-driven insights for smarter decision-making.
+          </li>
+          <li>
+            <strong>Deep Learning and Neural Networks</strong>: Cutting-edge
+            models tailored to solve complex problems.
+          </li>
+        </ul>
+        <h3 class="paragraph"><strong>Terms of Use</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Accuracy</strong>: While our AI solutions are designed for
+            high accuracy, results may vary depending on input data and use
+            cases. Clients must independently verify outcomes before
+            implementing critical decisions.
+          </li>
+          <li>
+            <strong>Data Ownership</strong>: Any datasets shared by the Client
+            remain their property. VBLAZE may not use this data outside the
+            agreed scope without explicit permission.
+          </li>
+          <li>
+            <strong>Limitations</strong>: AI models and systems are provided
+            as-is, and VBLAZE is not liable for indirect consequences arising
+            from their use.
+          </li>
+        </ol>
+        <hr />
+        <h2 class="paragraph"><strong>Website Development Services</strong></h2>
+        <p class="paragraph">
+          VBLAZE provides comprehensive web development services, including:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Web Design</strong>: Visually appealing and functional
+            layouts for optimal user experience.
+          </li>
+          <li>
+            <strong>Frontend Development</strong>: Interactive and responsive
+            interfaces using modern technologies.
+          </li>
+          <li>
+            <strong>Backend Development</strong>: Robust server-side
+            architecture to ensure seamless functionality.
+          </li>
+          <li>
+            <strong>UI/UX Design</strong>: Tailored designs to enhance user
+            engagement and brand identity.
+          </li>
+        </ul>
+        <h3 class="paragraph"><strong>Terms of Service</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Project Scope</strong>: All development projects are
+            governed by a mutually agreed scope document outlining deliverables,
+            timelines, and costs.
+          </li>
+          <li>
+            <strong>Revisions</strong>: Two rounds of revisions are included in
+            the project fee. Additional revisions may incur extra charges.
+          </li>
+          <li>
+            <strong>Ownership</strong>: Upon full payment, ownership of the
+            website, source code, and associated materials transfers to the
+            Client.
+          </li>
+        </ol>
+        <hr />
+        <h2 class="paragraph"><strong>Web Development Advisory Services</strong></h2>
+        <p class="paragraph">
+          Our consulting team provides expert guidance to help clients achieve
+          their web development goals. This includes:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Consulting</strong>: Strategic advice to optimize web
+            development projects.
+          </li>
+          <li>
+            <strong>Guidance and Mentorship</strong>: Coaching teams or
+            individuals in best practices.
+          </li>
+        </ul>
+        <h3 class="paragraph"><strong>Advisory Terms</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Best Effort Basis</strong>: Recommendations are provided
+            based on current industry standards but do not guarantee project
+            success.
+          </li>
+          <li>
+            <strong>Confidentiality</strong>: All shared project details remain
+            confidential and will not be disclosed to third parties.
+          </li>
+        </ol>
+        <hr />
+        <h2 class="paragraph"><strong>App Solutions Specialist Services</strong></h2>
+        <p class="paragraph">
+          VBLAZE specializes in creating innovative mobile applications that
+          drive business growth. Our services include:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Mobile Apps</strong>: Development for both iOS and Android
+            platforms.
+          </li>
+          <li>
+            <strong>Solutions Provider</strong>: Tailored app solutions to
+            address unique business needs.
+          </li>
+          <li>
+            <strong>Application Development</strong>: End-to-end app development
+            services, including prototyping, development, and deployment.
+          </li>
+          <li>
+            <strong>Software Specialist</strong>: Advanced technical support and
+            maintenance services.
+          </li>
+        </ul>
+        <h3 class="paragraph"><strong>Terms of Service</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Development Lifecycle</strong>: Each app project follows a
+            pre-defined lifecycle, including requirements analysis, development,
+            testing, and deployment.
+          </li>
+          <li>
+            <strong>Custom Features</strong>: Any additional features outside
+            the initial scope will be billed separately.
+          </li>
+          <li>
+            <strong>Support</strong>: Post-deployment support is provided as per
+            the agreed terms in the service contract.
+          </li>
+        </ol>
+        <hr />
+        <h2 class="paragraph"><strong>Digital Development Consulting</strong></h2>
+        <p class="paragraph">
+          VBLAZE offers professional consulting services for businesses looking
+          to harness technology effectively. These services include:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Strategy Development</strong>: Crafting customized plans to
+            achieve technological goals.
+          </li>
+          <li>
+            <strong>Consulting</strong>: Helping businesses choose the right
+            tools and platforms.
+          </li>
+          <li>
+            <strong>Development Planning</strong>: Creating detailed roadmaps
+            for successful project execution.
+          </li>
+          <li>
+            <strong>Technology Solutions</strong>: Offering expert
+            recommendations for innovative technology adoption.
+          </li>
+        </ul>
+        <h3 class="paragraph"><strong>Consulting Terms</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Customization</strong>: All consulting strategies are
+            tailored to the Client&rsquo;s unique needs and goals.
+          </li>
+          <li>
+            <strong>Documentation</strong>: All plans and strategies are shared
+            in documented form and must be reviewed by the Client.
+          </li>
+        </ol>
+        <hr />
+        <h2 class="paragraph"><strong>Digital Marketing Services</strong></h2>
+        <p class="paragraph">
+          VBLAZE provides digital marketing solutions to help businesses
+          increase visibility and drive engagement. Our services include:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>SEO</strong>: Enhancing search engine rankings through
+            optimized strategies.
+          </li>
+          <li>
+            <strong>Social Media Marketing</strong>: Creating and managing
+            campaigns across social platforms.
+          </li>
+          <li>
+            <strong>Email Marketing</strong>: Designing and executing email
+            campaigns to engage audiences.
+          </li>
+          <li>
+            <strong>Content Marketing</strong>: Crafting compelling content to
+            build brand authority.
+          </li>
+        </ul>
+        <h3 class="paragraph"><strong>Marketing Terms</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Performance Metrics</strong>: Campaign outcomes are
+            influenced by numerous variables and cannot be guaranteed.
+          </li>
+          <li>
+            <strong>Ownership of Content</strong>: All content created by VBLAZE
+            becomes the property of the Client after project completion and
+            payment.
+          </li>
+        </ol>
+        <hr />
+        <h2 class="paragraph"><strong>Filter Creation Services</strong></h2>
+        <p class="paragraph">
+          Our team creates professional-grade filters and plugins, including:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Image Editing</strong>: High-quality photo edits for
+            professional use.
+          </li>
+          <li>
+            <strong>Photo Filters</strong>: Custom filters tailored to your
+            brand aesthetic.
+          </li>
+          <li>
+            <strong>Application Plugins</strong>: Tools designed to enhance the
+            functionality of your apps.
+          </li>
+          <li>
+            <strong>Graphic Design</strong>: Visually appealing designs to
+            elevate your digital content.
+          </li>
+        </ul>
+        <h3 class="paragraph"><strong>Filter Creation Terms</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Exclusivity</strong>: Custom filters are designed
+            exclusively for the Client and will not be reused.
+          </li>
+          <li>
+            <strong>Third-Party Compatibility</strong>: While we ensure
+            compatibility at the time of delivery, future updates to third-party
+            platforms may require additional adjustments.
+          </li>
+        </ol>
+        <hr />
+        <h3 class="paragraph"><strong>General Terms and Conditions</strong></h3>
+        <ol class="paragraph">
+          <li>
+            <strong>Payment Terms</strong>: All payments must be made as per the
+            agreed schedule. Delayed payments may lead to suspension of
+            services.
+          </li>
+          <li>
+            <strong>Confidentiality</strong>: VBLAZE ensures the confidentiality
+            of all shared information and expects the same from the Client.
+          </li>
+          <li>
+            <strong>Liability</strong>: VBLAZE is not liable for indirect,
+            incidental, or consequential damages arising from the use of our
+            services.
+          </li>
+          <li>
+            <strong>Dispute Resolution</strong>: Any disputes arising will be
+            resolved through mediation or arbitration in accordance with local
+            laws.
+          </li>
+          <li>
+            <strong>Amendments</strong>: These terms are subject to change, and
+            updated terms will be posted on our website. Continued use of our
+            services indicates acceptance of the revised terms.
+          </li>
+        </ol>
+        <p class="paragraph">
+          For inquiries or additional information, feel free to contact us at
+          <strong
+            ><a href="mailto:info@vblaze.com">info@vblaze.com</a></strong
+          >. Thank you for choosing VBLAZE as your trusted digital solutions
+          partner!
+        </p>
+      </div>
+    </section>
+    <footer>
+      <p class="footer-heading">
+        © Copyright 2022-2024 VBLAZE. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
