@@ -1,166 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static Chatbot</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f9f9f9;
-      }
-      #chatbot-container {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 350px;
-        height: 500px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background: white;
-        overflow: hidden;
-        display: none;
-        flex-direction: column;
-      }
-      #chat-header {
-        background: #6200ea;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        font-size: 18px;
-      }
-      #chat-body {
-        flex: 1;
-        padding: 10px;
-        overflow-y: auto;
-        border-bottom: 1px solid #ccc;
-      }
-      #chat-footer {
-        display: flex;
-        padding: 10px;
-        background: #f1f1f1;
-      }
-      #user-input {
-        flex: 1;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      #send-btn {
-        margin-left: 5px;
-        background: #6200ea;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .chat-message {
-        margin: 10px 0;
-        display: flex;
-      }
-      .chat-message.bot {
-        justify-content: flex-start;
-      }
-      .chat-message.user {
-        justify-content: flex-end;
-      }
-      .chat-bubble {
-        max-width: 70%;
-        padding: 10px;
-        border-radius: 15px;
-      }
-      .chat-bubble.bot {
-        background: #f1f1f1;
-        color: black;
-      }
-      .chat-bubble.user {
-        background: #6200ea;
-        color: white;
-      }
-      #fab-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background: #6200ea;
-        border: none;
-        border-radius: 50%;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        /* FAB button style */
+        #fab-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #6200ea;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        /* Chatbot container style (hidden by default) */
+        #chatbot-container {
+            position: fixed;
+            bottom: 80px; /* Position above the FAB */
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: white;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+        }
+        #chat-header {
+            background: #6200ea;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        #chat-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        #chat-footer {
+            display: flex;
+            padding: 10px;
+            background: #f1f1f1;
+        }
+        #user-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #send-btn {
+            margin-left: 5px;
+            background: #6200ea;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-message {
+            margin: 10px 0;
+            display: flex;
+        }
+        .chat-message.bot {
+            justify-content: flex-start;
+        }
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+        .chat-bubble {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        .chat-bubble.bot {
+            background: #f1f1f1;
+            color: black;
+        }
+        .chat-bubble.user {
+            background: #6200ea;
+            color: white;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Floating Action Button (FAB) -->
     <button id="fab-btn">💬</button>
+    
+    <!-- Chatbot container, initially hidden -->
     <div id="chatbot-container">
-      <div id="chat-header">Chatbot</div>
-      <div id="chat-body"></div>
-      <div id="chat-footer">
-        <input type="text" id="user-input" placeholder="Type a message" />
-        <button id="send-btn">Send</button>
-      </div>
+        <div id="chat-header">Chatbot</div>
+        <div id="chat-body"></div>
+        <div id="chat-footer">
+            <input type="text" id="user-input" placeholder="Type a message">
+            <button id="send-btn">Send</button>
+        </div>
     </div>
 
     <script>
-      // Chatbot responses
-      const responses = {
-        hello: "Hi there! How can I help you?",
-        "how are you": "I'm just a bot, but I'm here to assist you!",
-        bye: "Goodbye! Have a great day!",
-        default: "I'm not sure about that. Can you rephrase?",
-      };
+        // Chatbot responses
+        const responses = {
+            "hello": "Hi there! How can I help you?",
+            "how are you": "I'm just a bot, but I'm here to assist you!",
+            "bye": "Goodbye! Have a great day!",
+            "default": "I'm not sure about that. Can you rephrase?"
+        };
 
-      // Get elements
-      const chatbotContainer = document.getElementById("chatbot-container");
-      const fabBtn = document.getElementById("fab-btn");
-      const chatBody = document.getElementById("chat-body");
-      const userInput = document.getElementById("user-input");
-      const sendBtn = document.getElementById("send-btn");
+        // Get elements
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const fabBtn = document.getElementById('fab-btn');
+        const chatBody = document.getElementById('chat-body');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
 
-      // Toggle chatbot visibility
-      fabBtn.addEventListener("click", () => {
-        chatbotContainer.style.display =
-          chatbotContainer.style.display === "flex" ? "none" : "flex";
-      });
+        // Toggle chatbot visibility when FAB is clicked
+        fabBtn.addEventListener('click', () => {
+            chatbotContainer.style.display = chatbotContainer.style.display === 'flex' ? 'none' : 'flex';
+        });
 
-      // Append messages to chat
-      function appendMessage(content, sender = "bot") {
-        const message = document.createElement("div");
-        message.className = `chat-message ${sender}`;
-        const bubble = document.createElement("div");
-        bubble.className = `chat-bubble ${sender}`;
-        bubble.textContent = content;
-        message.appendChild(bubble);
-        chatBody.appendChild(message);
-        chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
-      }
+        // Append messages to chat
+        function appendMessage(content, sender = "bot") {
+            const message = document.createElement('div');
+            message.className = `chat-message ${sender}`;
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble ${sender}`;
+            bubble.textContent = content;
+            message.appendChild(bubble);
+            chatBody.appendChild(message);
+            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
+        }
 
-      // Handle user input and response
-      function handleMessage() {
-        const message = userInput.value.trim().toLowerCase();
-        if (!message) return;
-        appendMessage(message, "user");
-        userInput.value = "";
+        // Handle user input and response
+        function handleMessage() {
+            const message = userInput.value.trim().toLowerCase();
+            if (!message) return;
+            appendMessage(message, "user");
+            userInput.value = "";
 
-        // Bot response
-        const response = responses[message] || responses["default"];
-        setTimeout(() => appendMessage(response, "bot"), 500);
-      }
+            // Bot response
+            const response = responses[message] || responses["default"];
+            setTimeout(() => appendMessage(response, "bot"), 500);
+        }
 
-      // Send message on button click or Enter key
-      sendBtn.addEventListener("click", handleMessage);
-      userInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") handleMessage();
-      });
+        // Send message on button click or Enter key
+        sendBtn.addEventListener('click', handleMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === "Enter") handleMessage();
+        });
     </script>
-  </body>
+</body>
 </html>
